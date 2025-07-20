@@ -36,9 +36,9 @@ Feature: Authentication Tests
     And match response.error == '<expectedError>'
     
     Examples:
-      | testCase                        | endpoint    | requestBody                 | expectedStatus | expectedError           |
-      | POST_Login_MissingPassword      | /login      | { "email": "peter@klaven" } | 400            | Missing password        |
-      | POST_Register_MissingPassword   | /register   | { "email": "sydney@fife" }  | 400            | Missing password        |
+      | testCase                        | endpoint    | requestBody                       | expectedStatus | expectedError           |
+      | POST_Login_MissingPassword      | /login      | { "email": "rodrigocruz@klaven" } | 400            | Missing password        |
+      | POST_Register_MissingPassword   | /register   | { "email": "rodriogrosario@fife" }| 400            | Missing password        |
 
   # @invalid-path-tests
   # Scenario Outline: <testCase> - Invalid path scenarios
