@@ -1,8 +1,10 @@
 Feature: Crear recursos en /api/unknown usando CSV
 
   Background:
-    * url 'https://reqres.in/api'
-    * configure headers = { 'x-api-key': 'reqres-free-v1' }
+    * def config = call read('classpath:helpers/config-helper.feature@get-config')
+    * url config.result.baseUrl
+    * headers config.result.defaultHeaders
+
 
   @create-resources-csv
   Scenario Outline: Crear recurso desde CSV - <name>
