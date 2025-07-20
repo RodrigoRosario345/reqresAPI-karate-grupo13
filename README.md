@@ -4,7 +4,9 @@ Este proyecto contiene la automatización de pruebas para la API pública [ReqRe
 
 ---
 
-## ✅ Estructura del Proyecto
+# 🚀 Estructura Completa del Proyecto Karate - ReqRes API
+
+## 📁 Organización del Proyecto
 
 ```
 reqresAPI-karate-grupo13/
@@ -12,28 +14,38 @@ reqresAPI-karate-grupo13/
 │   └── test/
 │       └── java/
 │           └── apitests/
-│               ├── authentication/
-│               │   ├── Login.feature
-│               │   ├── Register.feature
-│               │   └── Logout.feature
-│               ├── users/
-│               │   ├── GetUsers.feature
-│               │   ├── CreateUser.feature
-│               │   ├── UpdateUser.feature
-│               │   └── DeleteUser.feature
-│               ├── resources/
-│               │   ├── GetResource.feature
-│               │   ├── DeleteResource.feature
-│               │   └── UpdateResource.feature
-│               └── APITest.java
+│               ├── authentication/          # 🔐 Módulo de Autenticación
+│               │   ├── auth-tests.feature      # Tests principales de login/register
+│               │   └── csv-driven-auth.feature # Tests con datos CSV
+│               ├── users/                   # 👥 Módulo de Usuarios
+│               │   └── users-test.feature      # Tests CRUD completos
+│               ├── resources/               # 📦 Módulo de Recursos
+│               │   ├── DELETE_Resources_ValidID.feature
+│               │   ├── POST_Resource_data.feature
+│               │   └── PUT_Resources_Update_ValidID.feature
+│               ├── helpers/                 # 🛠️ Features Auxiliares
+│               │   ├── auth-helper.feature     # Operaciones de autenticación
+│               │   ├── auth-validator.feature  # Validaciones de autenticación
+│               │   ├── config-helper.feature   # Configuración centralizada
+│               │   └── data-helper.feature     # Manejo de datos y CSV
+│               ├── utils/                   # 🔧 Utilidades JavaScript
+│               │   ├── dataGenerator.js        # Generación de datos aleatorios
+│               │   ├── generateRandomID.js     # IDs aleatorios
+│               │   ├── generateRandomColorName.js # Colores aleatorios
+│               │   └── generateRandomHexaName.js  # Códigos hexadecimales
+│               ├── data/                    # 📊 Archivos de Datos
+│               │   ├── recurso.csv             # Datos de recursos
+│               │   └── users.csv               # Datos de usuarios
+│               ├── config/                  # ⚙️ Configuración
+│               │   ├── karate-config.js        # Configuración global
+│               │   └── logback-test.xml        # Configuración de logs
+│               └── APITest.java             # 🏃‍♂️ Runner principal
 │
-├── utils/
-│   ├── karate-config.js
-│   └── logback-test.xml
-├── data/
-│   └── users.csv
-├── pom.xml
-└── README.md
+├── target/                                  # 📈 Reportes y resultados
+├── pom.xml                                  # 🔗 Dependencias Maven
+├── .gitignore                              # 🚫 Archivos ignorados
+└── README.md                               # 📖 Documentación
+
 ```
 
 ---
@@ -85,13 +97,14 @@ Cada archivo `.feature` contiene múltiples `Scenario` con descripciones claras 
 
 ---
 
-## 💡 Buenas prácticas aplicadas
+## 💡 Buenas Prácticas Aplicadas
 
-- Descripción detallada de escenarios (`Scenario:`).
-- Agrupación lógica por módulos/recurso.
-- Uso de `Background:` para configurar base URL.
-- Datos de prueba reutilizables (`users.csv`).
-- Centralización de configuración (`karate-config.js`).
+- 🎯 Separación por dominio: Cada módulo tiene su carpeta (authentication/, users/, resources/)
+- 🔄 Reutilización máxima: Helpers centralizados evitan duplicar código
+- 📊 Datos externos: CSV para casos de prueba dinámicos y realistas
+- ⚙️ Configuración centralizada: karate-config.js 
+- 🏷️ Tags organizados: @auth, @crud, @positive para ejecución selectiva
+- 📝 Scenarios descriptivos: Nombres claros como POST_Login_ValidCredentials_Success200
 
 ---
 
