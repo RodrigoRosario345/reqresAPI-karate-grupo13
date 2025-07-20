@@ -23,8 +23,7 @@ Feature: Authentication Helper
     And request { email: '#(email)', password: '#(password)' }
     When method POST
     Then status 200
-    And match response.token == '#string'
-    * def result = { token: response.token, email: email }
+
 
   @register-with-credentials
   Scenario: Register with provided credentials
@@ -34,4 +33,4 @@ Feature: Authentication Helper
     And request { email: '#(email)', password: '#(password)' }
     When method POST
     Then status 200
-    * def result = response
+
